@@ -36,13 +36,10 @@ pip install cloudflare requests
 ## Configuration
 
 Open the script and fill in the following constants at the top:
-
-| Variable               |                     Description                                |
-|                        |                                                                |
-| `CLOUDFLARE_API_TOKEN` | Your Cloudflare API token (needs DNS Edit permission)          |    
-| `CLOUDFLARE_ZONE_ID`   | The Zone ID of your domain (found in the Cloudflare dashboard) |
-| `ACCOUNT_ID`           | Your Cloudflare Account ID                                     |
-| `DNS_RECORD_NAME`      | The full DNS record name to update (e.g. `home.example.com`)   |
+`CLOUDFLARE_API_TOKEN`: Your Cloudflare API token (needs DNS Edit permission)              
+`CLOUDFLARE_ZONE_ID`  : The Zone ID of your domain (found in the Cloudflare dashboard) 
+`ACCOUNT_ID`          : Your Cloudflare Account ID                                     
+`DNS_RECORD_NAME`     : The full DNS record name to update (e.g. `home.example.com`)   
 
 ### Getting a Cloudflare API Token
 
@@ -80,10 +77,8 @@ Create a basic task in **Task Scheduler** that runs `python ddns_updater.py` on 
 
 The script writes to two rotating log files (max 1 MB each, 3 backups kept):
 
-| File             |             Contents                            |
-|                  |                                                 |
-| `ddns-info.log`  | Successful updates and no-change events         |
-| `ddns-error.log` | Errors from IP fetching or Cloudflare API calls |
+`ddns-info.log`  | Successful updates and no-change events         
+`ddns-error.log` | Errors from IP fetching or Cloudflare API calls 
 
 Example log entries:
 
